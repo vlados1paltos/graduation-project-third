@@ -1,0 +1,36 @@
+.scroll-top-button {
+    position: fixed; // Закрепляем кнопку относительно окна браузера.
+    right: 2rem; // Отступ от правого края.
+    bottom: 2rem; // Отступ от нижнего края.
+    z-index: 1000; // Размещаем поверх остальных блоков.
+
+    width: 3rem;
+    height: 3rem;
+
+    border: 0;
+    border-radius: 50%;
+    background-color: #64a19d;
+    color: #fff;
+    font-size: 1.5rem;
+
+    cursor: pointer;
+
+    // Начальное состояние: кнопка скрыта.
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(1rem);
+    pointer-events: none;
+
+    // Плавное переключение между скрытым и видимым состояниями.
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.scroll-top-button--visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}

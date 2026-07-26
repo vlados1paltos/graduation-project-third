@@ -191,11 +191,18 @@ html(lang='en')
             .container.px-4.px-lg-5
                 | Copyright &copy; Your Website 2023
 
+        //- Кнопка возврата к началу страницы
+        button#scrollTopButton.scroll-top-button(
+            type='button'
+            aria-label='Вернуться к началу страницы'
+        ) ↑
+
         // Bootstrap core JS
         script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
 
         // Core theme JS
         script(src='js/scripts.js')
+        script(src='js/custom.js')
 
         // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
         // * *                               SB Forms JS                               * *
