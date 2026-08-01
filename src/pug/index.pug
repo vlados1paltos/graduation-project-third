@@ -112,45 +112,26 @@ html(lang='en')
                         // To make this form functional, sign up at
                         // https://startbootstrap.com/solution/contact-forms
                         // to get an API token!
-                        
-                        form#contactForm.form-signup(data-sb-form-api-token='API_TOKEN')
 
-                            // Email address input
-
+                        form#contactForm.form-signup(novalid)
                             .row.input-group-newsletter
                                 .col
                                     input#emailAddress.form-control(
-                                        type='email',
-                                        placeholder='Enter email address...',
-                                        aria-label='Enter email address...',
-                                        data-sb-validations='required,email'
+                                        type='email'
+                                        placeholder='Enter email address...'
+                                        aria-label='Email address'
+                                        required
                                     )
+
                                 .col-auto
-                                    button#submitButton.btn.btn-primary.disabled(type='submit') Notify Me!
-                            .invalid-feedback.mt-2(data-sb-feedback='emailAddress:required')
-                                | An email is required.
-                            .invalid-feedback.mt-2(data-sb-feedback='emailAddress:email')
-                                | Email is not valid.
+                                    button#submitButton.btn.btn-primary(
+                                        type='submit'
+                                        disabled
+                                    ) Notify Me!
 
-                            // Submit success message
-                            //
-                            // This is what your users will see when the form
-                            // has successfully submitted
-
-                            #submitSuccessMessage.d-none
-                                .text-center.mb-3.mt-2.text-white
-                                    .fw-bolder Form submission successful!
-                                    | To activate this form, sign up at
-                                    br
-                                    a(href='https://startbootstrap.com/solution/contact-forms') https://startbootstrap.com/solution/contact-forms
-
-                            // Submit error message
-                            //
-                            // This is what your users will see when there is
-                            // an error submitting the form
-
-                            #submitErrorMessage.d-none
-                                .text-center.text-danger.mb-3.mt-2 Error sending message!
+                            p#emailStatus.email-status.mt-3(
+                                aria-live='polite'
+                            ) Введите email
 
         // Contact
         section.contact-section.bg-black
@@ -208,5 +189,3 @@ html(lang='en')
         // * *                               SB Forms JS                               * *
         // * * Activate your form at https://startbootstrap.com/solution/contact-forms * *
         // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
-        script(src='https://cdn.startbootstrap.com/sb-forms-latest.js')

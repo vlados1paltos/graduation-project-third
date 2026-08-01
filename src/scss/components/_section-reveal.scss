@@ -1,0 +1,24 @@
+.reveal-section {
+    opacity: 0;
+    transform: translateY(3rem);
+
+    // Плавно меняем прозрачность и положение секции.
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal-section--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+// Отключаем движение для пользователей,
+// которые выбрали уменьшение анимаций в системе.
+@media (prefers-reduced-motion: reduce) {
+    .reveal-section {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

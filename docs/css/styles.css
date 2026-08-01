@@ -11090,6 +11090,45 @@ body {
   pointer-events: auto;
 }
 
+.email-status {
+  min-height: 1.5rem;
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.65);
+  opacity: 0.8;
+  transform: translateY(0.25rem);
+  transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+}
+
+.email-status--error {
+  color: #ffb4b4;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.email-status--success {
+  color: #8fe3c3;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-section {
+  opacity: 0;
+  transform: translateY(3rem);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-section--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 .masthead {
   position: relative;
   width: 100%;
